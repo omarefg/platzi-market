@@ -38,102 +38,54 @@ public class Producto {
     @JoinColumn(name = "id_categoria", insertable = false, updatable = false)
     private Categoria categoria;
 
-    /**
-     * @return Integer return the idProducto
-     */
-    public Integer getIdProducto() {
-        return idProducto;
-    }
-
-    /**
-     * @param idProducto the idProducto to set
-     */
+    public Integer getIdProducto() { return idProducto; }
     public void setIdProducto(Integer idProducto) {
         this.idProducto = idProducto;
     }
 
-    /**
-     * @return String return the nombre
-     */
     public String getNombre() {
         return nombre;
     }
-
-    /**
-     * @param nombre the nombre to set
-     */
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
 
-    /**
-     * @return Integer return the idCategoria
-     */
     public Integer getIdCategoria() {
         return idCategoria;
     }
-
-    /**
-     * @param idCategoria the idCategoria to set
-     */
     public void setIdCategoria(Integer idCategoria) {
         this.idCategoria = idCategoria;
     }
 
-    /**
-     * @return String return the codigoBarras
-     */
     public String getCodigoBarras() {
         return codigoBarras;
     }
-
-    /**
-     * @param codigoBarras the codigoBarras to set
-     */
     public void setCodigoBarras(String codigoBarras) {
         this.codigoBarras = codigoBarras;
     }
 
-    /**
-     * @return Integer return the precioVenta
-     */
     public Integer getPrecioVenta() {
         return precioVenta;
     }
-
-    /**
-     * @param precioVenta the precioVenta to set
-     */
     public void setPrecioVenta(Integer precioVenta) {
         this.precioVenta = precioVenta;
     }
 
-    /**
-     * @return Integer return the cantidadStock
-     */
     public Integer getCantidadStock() {
         return cantidadStock;
     }
-
-    /**
-     * @param cantidadStock the cantidadStock to set
-     */
     public void setCantidadStock(Integer cantidadStock) {
         this.cantidadStock = cantidadStock;
     }
 
-    /**
-     * @return Boolean return the estado
-     */
     public Boolean isEstado() {
         return estado;
     }
-
-    /**
-     * @param estado the estado to set
-     */
     public void setEstado(Boolean estado) {
         this.estado = estado;
     }
+    public Boolean getEstado() { return estado; }
 
+    public Categoria getCategoria() { return categoria; }
+    public void setCategoria(Categoria categoria) { this.categoria = categoria; }
 }
