@@ -1,10 +1,6 @@
 package com.platzi.market.persistence.entity;
 
-import javax.persistence.EmbeddedId;
-import javax.persistence.Entity;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "compras_productos")
@@ -13,13 +9,14 @@ public class ComprasProducto {
     @EmbeddedId
     private ComprasProductoPK id;
 
-    private String cantidad;
+    private Integer cantidad;
 
     private Double total;
 
     private Boolean estado;
     
     @ManyToOne
+    @MapsId("idCompra")
     @JoinColumn(name = "id_compra", insertable = false, updatable = false)
     private Compra compra;
 
@@ -27,60 +24,55 @@ public class ComprasProducto {
     @JoinColumn(name = "id_producto", insertable = false, updatable = false)
     private Producto producto;
 
-    /**
-     * @return ComprasProductoPK return the id
-     */
     public ComprasProductoPK getId() {
         return id;
     }
 
-    /**
-     * @param id the id to set
-     */
     public void setId(ComprasProductoPK id) {
         this.id = id;
     }
 
-    /**
-     * @return String return the cantidad
-     */
-    public String getCantidad() {
+    public Integer getCantidad() {
         return cantidad;
     }
 
-    /**
-     * @param cantidad the cantidad to set
-     */
-    public void setCantidad(String cantidad) {
+    public void setCantidad(Integer cantidad) {
         this.cantidad = cantidad;
     }
 
-    /**
-     * @return Double return the total
-     */
     public Double getTotal() {
         return total;
     }
 
-    /**
-     * @param total the total to set
-     */
     public void setTotal(Double total) {
         this.total = total;
     }
 
-    /**
-     * @return Boolean return the estado
-     */
     public Boolean isEstado() {
         return estado;
     }
 
-    /**
-     * @param estado the estado to set
-     */
     public void setEstado(Boolean estado) {
         this.estado = estado;
     }
 
+    public Boolean getEstado() {
+        return estado;
+    }
+
+    public Compra getCompra() {
+        return compra;
+    }
+
+    public void setCompra(Compra compra) {
+        this.compra = compra;
+    }
+
+    public Producto getProducto() {
+        return producto;
+    }
+
+    public void setProducto(Producto producto) {
+        this.producto = producto;
+    }
 }
